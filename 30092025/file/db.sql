@@ -11,3 +11,8 @@ CREATE TABLE usuarios(
     email VARCHAR (100) NOT NULL,
     telefono VARCHAR(15) NOT NULL
 );
+
+
+INSERT INTO `crud_app`.`usuarios` (`id`, `nombre`, `email`, `telefono`) VALUES ('1', 'aaron', 'aaronvelasvea@aragon.unam.mx', '5626198295');
+
+INSERT INTO `crud_app`.`usuarios` (`id`, `nombre`, `email`, `telefono`) VALUES ('2', 'Yenifer', 'yen@aragon.unam.mx', '41256398');

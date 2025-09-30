@@ -21,3 +21,12 @@ INSERT INTO `crud_app`.`usuarios` (`id`, `nombre`, `email`, `telefono`) VALUES (
 INSERT INTO `crud_app`.`usuarios` (`id`, `nombre`, `email`, `telefono`) VALUES ('4', 'Jonthan', 'jonathan@aragon.unam.mx', '234234234');
 INSERT INTO `crud_app`.`usuarios` (`id`, `nombre`, `email`, `telefono`) VALUES ('5', 'Maria del Carmen', 'carmen@aragon.unam.mx', '4456546546');
 INSERT INTO `crud_app`.`usuarios` (`id`, `nombre`, `email`, `telefono`) VALUES ('6', 'Felipe Eleazar', 'apa@aragon.unam.mx', '43452124');
+
+
+-- eliminar registro de una TABLA
+
+DELETE FROM `crud_app`.`usuarios` WHERE (`id` = '7');
+
+-- modificar registro
+
+UPDATE `crud_app`.`usuarios` SET `email` = 'yen@aragon.unam.mxaa' WHERE (`id` = '2');

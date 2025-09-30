@@ -10,11 +10,11 @@ $user='root';
 $password='123456';
 $dbname='crud_app';
 
-$conn = new mysqli($host,$user,$password,$dbname);
+$conexion = new mysqli($host,$user,$password,$dbname);
 
 
-if($conn -> connect_error){
-    die('Error en la conexion a la DB :( : '.$conn -> connct_error);
+if($conexion -> connect_error){
+    die('Error en la conexion a la DB :( : '.$conexion -> connct_error);
 }else{
     echo "Conexion realizada";
 }

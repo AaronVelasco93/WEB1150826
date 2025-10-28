@@ -1,16 +1,10 @@
 <?php
-include('./logica/db.php');
-$consulta= "SELECT * FROM usuarios";
-$result = $conn->query($consulta);
+    include('./logica/db.php');
+    $consulta= "SELECT * FROM usuarios";
+    $result = $conn->query($consulta);
 ?>
+<?php include('./head.php'); ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Usuarios</title>
-</head>
-<body>
     <h1>Usuarios</h1>
     <a href="./logica/create.php">Agregar Usuario</a>
     <table border="1">
@@ -28,11 +22,11 @@ $result = $conn->query($consulta);
             <td><?php echo $row['email']; ?></td>
             <td><?php echo $row['telefono']; ?></td>
             <td>
-                <a href="./logica/update.php?id=<?php echo $row['id']; ?>">Editar</a>
+                <a href="./logica/update2.php?id=<?php echo $row['id']; ?>">Editar</a>
                 <a href="./logica/delete.php?id=<?php echo $row['id']; ?>">Eliminar</a>
             </td>
         </tr>
         <?php } ?>
     </table>
-</body>
-</html>
+
+<?php  include('./footer.php');  ?>

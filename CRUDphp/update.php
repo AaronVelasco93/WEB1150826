@@ -1,7 +1,30 @@
+<?php
+include('./logica/db.php');
 
-<?php include('../head.php');  ?>
+$id = $_GET['id'];
+$sql = "SELECT * FROM usuarios WHERE id=$id";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $telefono = $_POST['telefono'];
+
+    $sql = "UPDATE usuarios SET nombre='$nombre', email='$email', telefono='$telefono' WHERE id=$id";
+    
+    if ($conn->query($sql) === TRUE) {
+        header('Location: ./index.php');
+        exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+?>
+<?php include('./head.php');  ?>
     <h1>Editar Usuario</h1>
-    <form method="POST" action="./logica/update2.php?id=<?php echo $id; ?>">
+    <form method="POST" action="./update.php?id=<?php echo $id; ?>">
         <label>Nombre:</label>
         <input type="text" name="nombre" value="<?php echo $row['nombre']; ?>" required><br>
         <label>Email:</label>
@@ -11,7 +34,7 @@
         <input type="submit" value="Actualizar Usuario">
     </form>
     <br>
-    <a href="../index.php">Volver a la lista</a>
+    <a href="./index.php">Volver a la lista</a>
 
 
-<?php include('../footer.php'); ?>
+<?php include('./footer.php'); ?>

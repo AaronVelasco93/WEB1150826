@@ -6,7 +6,7 @@
 <?php include('./head.php'); ?>
 
     <h1>Usuarios</h1>
-    <a href="./logica/create.php">Agregar Usuario</a>
+    <a href="./create.php">Agregar Usuario bandera 1</a>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -22,7 +22,7 @@
             <td><?php echo $row['email']; ?></td>
             <td><?php echo $row['telefono']; ?></td>
             <td>
-                <a href="./logica/update2.php?id=<?php echo $row['id']; ?>">Editar</a>
+                <a href="./update.php?id=<?php echo $row['id']; ?>">Editar</a>
                 <a href="./logica/delete.php?id=<?php echo $row['id']; ?>">Eliminar</a>
             </td>
         </tr>
